@@ -1,0 +1,16 @@
+Created!
+You have successfully created a new database. The details are below.
+
+Username: 4szhjqWLO1
+
+Database name: 4szhjqWLO1
+
+Password: SCKKmnhr7O
+
+Server: remotemysql.com
+
+Port: 3306
+
+These are the username and password to log in to your database and phpMyAdmin
+
+Make sure you keep your password secure. Ensure you keep back ups of your database in case it gets deleted.
