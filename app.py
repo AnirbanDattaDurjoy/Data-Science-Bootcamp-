@@ -74,8 +74,8 @@ def admin():
             tables = cursor.fetchall()
             # st.write(tables)
             for i in tables:
+                st.write(i[0])
                 st.write(i[1])
-                st.write(i[2])
                 Accept = st.button('Accept', key=i[0])
                 if Accept:
                     st.write('Accepted')
