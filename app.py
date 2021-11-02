@@ -52,7 +52,7 @@ cursor, db = get_database_connection()
 
 # cursor.execute('''CREATE TABLE information (id varchar(255),
 #                                               studentname varchar(255),
-#                                               re_date date,
+#                                               reg_date date,
 #												status varchar(255))''')
 # cursor.execute("Select * from information")
 # tables = cursor.fetchall()
@@ -69,7 +69,7 @@ def admin():
 
             date1 = st.date_input('Date1')
             date2 = st.date_input('Date2')
-            cursor.execute(f"select * from information where re_date between '{date1}' and '{date2}'")
+            cursor.execute(f"select * from information where reg_date between '{date1}' and '{date2}'")
             # db.commit()
             tables = cursor.fetchall()
             # st.write(tables)
@@ -95,18 +95,21 @@ def form():
     id = uuid4()
     id = str(id)[:10]
     with st.form(key='member form'):
-        sname = st.text_input('Student Name')
+        studentname = st.text_input('Student Name')
         email = st.text_input('E-mail')
+        contact_no = st.text_input('Contact')
         institution = st.text_input('College/University')
-        re_date = st.date_input('Registration Date')
+        semester_year = st.text_input('Semester/Year')
+        grade = st.text_input('GPA/CGPA')
+        reg_date = st.date_input('Registration Date')
         status = 'In Progress'
         if st.form_submit_button('Submit'):
-            query = f'''INSERT INTO information (id,sname,email,institution,
-                                                re_date,status) VALUES ('{id}','{sname}','{email}','{institution}',
-                                                '{re_date}','{status}')'''
+            query = f'''INSERT INTO information (id,studentname,email,contact_no,institution,semester_year,grade,
+                                                reg_date,status) VALUES ('{id}','{studentname}','{email}','{contact_no}','{institution}',
+                                                '{semester_year}','{grade}','{reg_date}','{status}')'''
             cursor.execute(query)
             db.commit()
-            st.success(f'Congratulation *{sname}*! You have successfully Registered')
+            st.success(f'Congratulation *{studentname}*! You have successfully Registered')
             st.code(id)
             st.warning("Please Store this code!!!")
 
