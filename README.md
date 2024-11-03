@@ -29,7 +29,7 @@ The goal of the Data Science Bootcamp is to create an engaging platform where us
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/AnirbanDattaDurjoy/Data-Science-Bootcamp.git
+   git clone https:https://github.com/AnirbanDattaDurjoy/Data-Science-Bootcamp-.git
    ```
 2. Navigate to the project directory:
    ```bash
